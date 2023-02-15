@@ -7,11 +7,12 @@ let registerUser = {
 };
 Feature('store');
 
-Scenario ('register new user',  ({ I, homePagePage, registerPage }) => {
-    I.openStore();
-    homePagePage.selectWebsiteEngLang();
-    homePagePage.openRegistrationPage();
+Scenario('register new user',  ({ I, homePagePage, registerPage }) => {
+    I.openStore(); 
+    I.selectWebsiteEngLang();  //homePagePage.
+    homePagePage.openRegistrationPage();//
     registerPage.verifyRegisterAccountText();
     registerUser.email = Date.now() + '@test.com';
     registerPage.fillRegistrationDetails(registerUser);
+    
     });
