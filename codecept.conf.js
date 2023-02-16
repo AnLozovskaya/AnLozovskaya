@@ -11,7 +11,7 @@ setCommonPlugins();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
-  tests: './TESTS/*_test.js',
+  tests: './tests/*_test.js',
   output: './output',
   helpers: {
     Playwright: {
@@ -20,12 +20,18 @@ exports.config = {
       browser: 'chromium',
       waitForNavigation: "networkidle",
       waitForTimeout: 5000
+    },
+    "ChaiWrapper": {
+      "require": "codeceptjs-chai"
     }
   },
   include: {
     "I": "./steps_file.js",
     "homePagePage": "./pages/homePage.js",
-    "registerPage": "./pages/register.js"
+    "registerPage": "./pages/register.js",
+    "productPage": "./pages/product.js",
+    "checkoutPage": "./pages/checkout.js",
+    "cartPage": "./pages/cart.js"
   },
   name: 'AnLozovskaya'
 }
